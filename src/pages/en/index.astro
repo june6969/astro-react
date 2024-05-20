@@ -1,0 +1,33 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Button from "@/components/react/Button"
+import List from '@/components/react/List';
+import Header from "@/components/Header.astro"
+import i18n from "astro:i18n"
+import i18next from '@/i18n';
+
+i18next.changeLanguage("en")
+
+const list = [
+  {id:"1",name:"dot",description:"wang wang wang"},
+  {id:"2",name:"dot",description:"wang wang wang"},
+  {id:"2",name:"dot",description:"wang wang wang"},
+  {id:"4",name:"dot",description:"wang wang wang"},
+
+]
+---
+
+<Layout title="Welcome to Astro.">
+  <header>
+    <Header page="home"/>
+  </header>
+	<main>
+    
+
+    <Button i18n={i18n}>123</Button>
+
+    <List data={list}/>
+	</main>
+</Layout>
+
+

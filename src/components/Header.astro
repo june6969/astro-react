@@ -1,0 +1,17 @@
+---
+import i18n from "@/i18n"
+const { page } = Astro.props;
+const menu =[
+
+]
+const { t } = i18n;
+
+
+---
+<h1>{t("hello")}</h1>
+
+<ul class="flex gap-10 px-5 py-2">
+  <a href="/" class="w-[100px] h-9 text-base font-medium rounded-lg bg-red-400 hover:bg-blue-300  flex items-center justify-center" class:list={{"bg-blue-400":page==="home"}}>{t("home")}</a>
+  <a href="/about" class="w-[100px] h-9 text-base font-medium rounded-lg bg-red-400 hover:bg-blue-300  flex items-center justify-center" class:list={{"bg-blue-400":page==="about"}}>{t("about")}</a>
+  <a href="/contract" class="w-[100px] h-9 text-base font-medium rounded-lg bg-red-400 hover:bg-blue-300  flex items-center justify-center" class:list={{"bg-blue-400":page==="contract"}}>{t("contract_us")}</a>
+</ul>

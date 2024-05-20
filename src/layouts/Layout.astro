@@ -1,13 +1,19 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+import i18next from '@/i18n';
+
 interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
+const language = i18next.language;
+i18next.changeLanguage(language)
+
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={language}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -15,6 +21,7 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+    <ViewTransitions/>
 	</head>
 	<body>
 		<slot />
